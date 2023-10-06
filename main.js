@@ -30,6 +30,36 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add more questions and categories as needed
     ];
 
+    // Generate questions and radio buttons
+    const questionsContainer = document.getElementById("questions-container");
+    questions.forEach((question, index) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question");
+
+        const questionLabel = document.createElement("label");
+        questionLabel.innerText = `Question ${index + 1}: ${question.text}`;
+
+        const radioOptionsContainer = document.createElement("div");
+        radioOptionsContainer.classList.add("radio-options");
+
+        for (let i = 1; i <= 7; i++) {
+            const radioInput = document.createElement("input");
+            radioInput.type = "radio";
+            radioInput.name = `q${index + 1}`;
+            radioInput.value = i;
+
+            const radioLabel = document.createElement("label");
+            radioLabel.innerText = ` ${i}`;
+
+            radioOptionsContainer.appendChild(radioInput);
+            radioOptionsContainer.appendChild(radioLabel);
+        }
+
+        questionDiv.appendChild(questionLabel);
+        questionDiv.appendChild(radioOptionsContainer);
+        questionsContainer.appendChild(questionDiv);
+    });
+
     // Add event listener for form submission
     quizForm.addEventListener("submit", function (e) {
         e.preventDefault();
