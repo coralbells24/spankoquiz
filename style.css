@@ -1,22 +1,24 @@
-/* CSS styles for the Kink Personality Quiz */
+/* CSS styles for the Kink Personality Quiz (inspired by BDSMtest.org) */
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #191919;
+    color: white;
     margin: 0;
     padding: 0;
 }
 
 h1 {
-    background-color: #0073e6;
-    color: white;
+    background-color: #222;
+    color: #ffcc00;
     padding: 20px;
+    text-align: center;
 }
 
 .quiz-container {
     max-width: 600px;
     margin: 0 auto;
-    background-color: white;
+    background-color: #333;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -25,6 +27,7 @@ h1 {
 label {
     display: block;
     margin-bottom: 10px;
+    color: #ffcc00;
 }
 
 .radio-options input[type="radio"] {
@@ -32,15 +35,16 @@ label {
 }
 
 button[type="submit"] {
-    background-color: #0073e6;
-    color: white;
+    background-color: #ffcc00;
+    color: #222;
     border: none;
     padding: 10px 20px;
     margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: #0058a2;
+    background-color: #ffdb4d;
 }
