@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kink Personality Quiz</title>
+</head>
+<body>
+    <h1>Kink Personality Quiz</h1>
+    
+    <form id="quiz-form">
+        <!-- Question 1 for Category A -->
+        <label>Category A - Question 1: How much do you agree with this statement?</label>
+        <select name="categoryA_question1">
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree</option>
+            <option value="3">Slightly Disagree</option>
+            <option value="4">Neutral</option>
+            <option value="5">Slightly Agree</option>
+            <option value="6">Agree</option>
+            <option value="7">Strongly Agree</option>
+        </select>
+
+        <!-- Question 2 for Category A -->
+        <label>Category A - Question 2: How much do you agree with this statement?</label>
+        <select name="categoryA_question2">
+            <!-- Options go here -->
+        </select>
+
+        <!-- Question 1 for Category B -->
+        <label>Category B - Question 1: How much do you agree with this statement?</label>
+        <select name="categoryB_question1">
+            <!-- Options go here -->
+        </select>
+
+        <!-- Question 2 for Category B -->
+        <label>Category B - Question 2: How much do you agree with this statement?</label>
+        <select name="categoryB_question2">
+            <!-- Options go here -->
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="results">
+        <!-- Results will be displayed here -->
+    </div>
+
+    <script>
+        // JavaScript scoring logic
+        document.getElementById('quiz-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Initialize scores for Category A and Category B
+            let categoryAScore = 0;
+            let categoryBScore = 0;
+
+            // Retrieve user responses
+            const responses = new FormData(this);
+            
+            // Calculate scores for Category A
+            categoryAScore += parseInt(responses.get('categoryA_question1'));
+            categoryAScore += parseInt(responses.get('categoryA_question2'));
+
+            // Calculate scores for Category B
+            categoryBScore += parseInt(responses.get('categoryB_question1'));
+            categoryBScore += parseInt(responses.get('categoryB_question2'));
+
+            // Calculate percentages
+            const totalPossibleScore = 7 * 2 * 2; // Assuming 2 questions per category, each with options from 1 to 7
+            const categoryAPercentage = (categoryAScore / totalPossibleScore) * 100;
+            const categoryBPercentage = (categoryBScore / totalPossibleScore) * 100;
+
+            // Display results
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <h2>Results</h2>
+                <p>Category A: ${categoryAPercentage.toFixed(2)}%</p>
+                <p>Category B: ${categoryBPercentage.toFixed(2)}%</p>
+            `;
+        });
+    </script>
+</body>
+</html>
