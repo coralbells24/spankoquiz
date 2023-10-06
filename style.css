@@ -42,10 +42,14 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-/* Add this CSS rule to display radio buttons on the same line */
-.radio-options .radio-wrapper {
-    display: inline-flex;
-    align-items: center;
+/* Display radio buttons horizontally */
+.radio-options {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    align-items: center; /* Center vertically within the container */
+}
+
+.radio-wrapper {
     margin-right: 10px;
 }
 
