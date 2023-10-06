@@ -51,8 +51,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const radioLabel = document.createElement("label");
             radioLabel.innerText = ` ${i}`;
 
-            radioOptionsContainer.appendChild(radioInput);
-            radioOptionsContainer.appendChild(radioLabel);
+            const radioWrapper = document.createElement("div");
+            radioWrapper.classList.add("radio-wrapper");
+
+            radioWrapper.appendChild(radioInput);
+            radioWrapper.appendChild(radioLabel);
+
+            radioOptionsContainer.appendChild(radioWrapper);
         }
 
         questionDiv.appendChild(questionLabel);
