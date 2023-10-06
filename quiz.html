@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kink Personality Quiz</title>
+    <title>Spanko Personality Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Spanko Personality Quiz</h1>
     <div class="quiz-container">
+        <h1>Spanko Personality Quiz</h1>
         <form id="quiz-form">
-            <div id="questions-container">
-                <!-- Questions will be generated here -->
+            <div class="question">
+                <label for="q1">Question 1: I enjoy taking control in intimate situations.</label>
+                <div class="radio-options" id="q1-options">
+                    <!-- Radio buttons will be generated here -->
+                </div>
             </div>
-            <button type="submit">Submit</button>
+            <!-- Add more questions here -->
+
+            <button type="submit" class="submit-button">Submit</button>
         </form>
     </div>
-    
-    <!-- Result container where scores will be displayed -->
     <div id="result-container"></div>
-
     <script src="main.js"></script>
 </body>
 </html>
