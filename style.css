@@ -30,9 +30,6 @@ label {
     color: #ffcc00;
 }
 
-.radio-options input[type="radio"] {
-    margin-right: 10px;
-}
 
 button[type="submit"] {
     background-color: #ffcc00;
@@ -44,6 +41,14 @@ button[type="submit"] {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+/* Add this CSS rule to display radio buttons on the same line */
+.radio-options .radio-wrapper {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
 
 button[type="submit"]:hover {
     background-color: #ffdb4d;
